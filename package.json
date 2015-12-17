@@ -1,0 +1,22 @@
+{
+  "name": "ajax_fun",
+  "version": "1.0.0",
+  "description": "AJAX fun stuff.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DZwell/ajax_fun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DZwell/ajax_fun/issues"
+  },
+  "homepage": "https://github.com/DZwell/ajax_fun#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
