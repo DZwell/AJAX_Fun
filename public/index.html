@@ -9,10 +9,23 @@
 <body>
     <form>
         <label for="userName">Enter Your Name Here</label>
-        <input type="text" name="userName"><br>
+        <input id="userName" type="text" name="userName"><br>
         <label for="comments">Enter Comments Here</label>
-        <input type="text" name="comments"><br>
+        <input id="comments" type="text" name="comments"><br>
         <button type="submit">Submit</button>
     </form>
+    <script>
+    $(document).ready(function() {
+        $('button').click('submit', function(event) {
+            event.preventDefault();
+            console.log($('#userName').val());
+            console.log($('#comments').val());
+            $('#userName').val(null);
+            $('#comments').val(null);
+        })
+
+    }); //end jquery
+
+    </script>
 </body>
 </html>
