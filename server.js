@@ -1,9 +1,15 @@
 //npm install --save express
 var express = require('express');
+var bodyParser = require('body-parser');
 //start express
 var app = express();
-
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
+
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 
 //router handling, api url is '/post-data'
@@ -12,6 +18,12 @@ app.get('/post-data', function(req, res, next){
 	console.log(req.body);
 
 });
+
+app.post('/update-db', function(req, res, next){
+    console.log("This is Req.Body:\n", req.body);
+    res.json(req.body);
+});
+
 
 
 app.get('*', function(req, res) {
