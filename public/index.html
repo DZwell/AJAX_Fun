@@ -21,10 +21,11 @@
             // $('#userName').val(null);
             // $('#comments').val(null);
             $.ajax({
-                type: "POST",
+                type: "PUT",
                 data: {
                     name: $('#userName').val(),
-                    comments: $('#comments').val()
+                    comment: $('#comments').val(),
+                    myKey: "hey, I'm a string. Bongs rule."
                 },
                 url: "http://localhost:3000/update-db",
                 success: function(data){

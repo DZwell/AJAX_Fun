@@ -13,15 +13,15 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 
 //router handling, api url is '/post-data'
-app.get('/post-data', function(req, res, next){
-
-	console.log(req.body);
+app.get('/get-data', function(req, res, next){
+    res.json(db);
 
 });
 
-app.post('/update-db', function(req, res, next){
+app.put('/update-db', function(req, res, next){
     console.log("This is Req.Body:\n", req.body);
-    res.json(req.body);
+    db.blogPost[0].comment = req.body.comment;
+    res.json(db);
 });
 
 
@@ -31,19 +31,16 @@ app.get('*', function(req, res) {
 });
 
 
-
-var JSON_DATA = {};
-
 var db = {
     blogPost: [
     {
         id: 1,
-        author: 'Daniel',
+        name: 'Daniel',
         comment: 'First comment. Boo yeah.'
     },
     {
         id: 2,
-        author: 'Levi',
+        name: 'Levi',
         comment: 'Second place. Womp womp'
     }
 ]};
