@@ -18,12 +18,20 @@
     $(document).ready(function() {
         $('button').click('submit', function(event) {
             event.preventDefault();
-            console.log($('#userName').val());
-            console.log($('#comments').val());
-            $('#userName').val(null);
-            $('#comments').val(null);
-        })
-
+            // $('#userName').val(null);
+            // $('#comments').val(null);
+            $.ajax({
+                type: "POST",
+                data: {
+                    name: $('#userName').val(),
+                    comments: $('#comments').val()
+                },
+                url: "http://localhost:3000/update-db",
+                success: function(data){
+                    console.log(data);
+                }
+            }); //end ajax
+        }); //end click event
     }); //end jquery
 
     </script>
