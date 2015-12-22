@@ -22,11 +22,19 @@ app.get('*', function(req, res) {
 
 var JSON_DATA = {};
 
-
-
-
-
-
+var db = {
+    blogPost: [
+    {
+        id: 1,
+        author: 'Daniel',
+        comment: 'First comment. Boo yeah.'
+    },
+    {
+        id: 2,
+        author: 'Levi',
+        comment: 'Second place. Womp womp'
+    }
+]};
 
 
 var port = 3000;
